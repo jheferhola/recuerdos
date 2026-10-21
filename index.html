@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestra Galaxia de Recuerdos ✨🌌</title>
+    <style>
+        :root {
+            --accent-pink: #ff2a75;
+            --accent-purple: #9d4edd;
+            --neon-glow: rgba(255, 42, 117, 0.5);
+            --card-bg: rgba(20, 15, 38, 0.85);
+            --text-light: #f1f1f9;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #090714 linear-gradient(135deg, #090714 0%, #150a2a 50%, #05020a 100%);
+            color: var(--text-light);
+            min-height: 100vh;
+            padding: 30px 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Efecto de estrellas de fondo */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(2px 2px at 20px 30px, #ffffff, rgba(0,0,0,0)),
+                        radial-gradient(2px 2px at 40px 70px, #ff85a2, rgba(0,0,0,0)),
+                        radial-gradient(1px 1px at 90px 40px, #ffffff, rgba(0,0,0,0)),
+                        radial-gradient(2px 2px at 160px 120px, #c77dff, rgba(0,0,0,0)),
+                        radial-gradient(1.5px 1.5px at 230px 190px, #fff, rgba(0,0,0,0)),
+                        radial-gradient(2px 2px at 300px 80px, #ff2a75, rgba(0,0,0,0));
+            background-repeat: repeat;
+            background-size: 350px 350px;
+            opacity: 0.6;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .wrapper {
+            max-width: 780px;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .btn-volver {
+            display: inline-block;
+            margin-bottom: 25px;
+            padding: 10px 22px;
+            background: rgba(255, 255, 255, 0.08);
+            color: #ff85a2;
+            border: 1px solid var(--accent-purple);
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 0.95rem;
+            backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+
+        .btn-volver:hover {
+            background: var(--accent-purple);
+            color: #fff;
+            box-shadow: 0 0 15px var(--accent-purple);
+            transform: translateX(-3px);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            background: linear-gradient(45deg, #ff758c, #ff7eb3, #c77dff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 20px rgba(255, 117, 140, 0.3);
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-style: italic;
+            color: #b8b2d8;
+            font-size: 1rem;
+        }
+
+        /* Tarjeta de Recuerdo Cósmica */
+        .card-recuerdo {
+            background: var(--card-bg);
+            border: 1px solid rgba(157, 78, 221, 0.3);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 35px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-recuerdo:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-pink);
+            box-shadow: 0 10px 30px var(--neon-glow);
+        }
+
+        .card-recuerdo h2 {
+            color: #ff85a2;
+            font-size: 1.35rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .media-container {
+            width: 100%;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 15px 0 20px 0;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .media-container img, .media-container video {
+            width: 100%;
+            max-height: 480px;
+            object-fit: cover;
+            display: block;
+            border-radius: 14px;
+        }
+
+        .poema-box {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid var(--accent-pink);
+            padding: 15px 20px;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            line-height: 1.7;
+            color: #e2ddf3;
+            font-size: 1.02rem;
+        }
+
+        .poema-box p {
+            margin-bottom: 8px;
+        }
+
+        .poema-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #8c85b1;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <a href="https://jheferhola.github.io/MishellGalaxy/" class="btn-volver">
+    &larr; Volver a nuestra galaxia
+</a>
+
+        <header>
+            <h1>Nuestros Momentos en el Universo ✨</h1>
+            <p class="subtitle">Entré miles de estrellas, coincidir contigo ha sido lo más lindo...</p>
+        </header>
+
+        <!-- RECUERDO 1: La Cita -->
+        <div class="card-recuerdo">
+            <h2>☕ Nuestra Cita Inolvidable</h2>
+            <div class="media-container">
+                <img src="img/cita.jpg" alt="Nuestra Cita">
+            </div>
+            <div class="poema-box">
+                <p>Entre el ramen, miradas y risas compartidas,</p>
+                <p>el tiempo decidió detenerse a nuestro favor.</p>
+                <p>No necesito buscar en todo el universo,</p>
+                <p>cuando el momento más bonito fue simplemente estar a tu lado Mishell.</p>
+            </div>
+        </div>
+
+
+<!-- RECUERDO 2: Video de la mordida -->
+<div class="card-recuerdo">
+    <h2>🎬 Ese Momento Tan Tú</h2>
+
+    <div class="media-container">
+        <video controls preload="metadata" playsinline>
+            <source src="videos/mordida.mp4" type="video/mp4">
+            Tu navegador no soporta la reproducción de video.
+        </video>
+    </div>
+
+    <div class="poema-box">
+        <p>Me encanta la magia de tus ocurrencias,</p>
+        <p>tu forma tan única de llenar de alegría cada segundo.</p>
+        <p>Incluso en tus locuras y pequeñas travesuras,</p>
+        <p>haces que pasar tiempo juntos sea mi parte favorita del día.</p>
+    </div>
+</div>
+
+
+        <!-- RECUERDO 3: Foto de la marca -->
+        <div class="card-recuerdo">
+            <h2>🐾 Un Recuerdo Inolvidable</h2>
+            <div class="media-container">
+                <img src="img/mordida2.jpg" alt="La marca de recuerdo">
+            </div>
+            <div class="poema-box">
+                <p>Una pequeña huella de un día lleno de risas y complicidad.</p>
+                <p>Detalles sencillos que se quedan guardados para siempre,</p>
+                <p>recordándome lo genial que la pasamos cuando estamos juntos.</p>
+            </div>
+        </div>
+
+        <!-- RECUERDO 4: Primer Beso -->
+        <div class="card-recuerdo">
+            <h2>✨ Un Instante Mágico</h2>
+            <div class="media-container">
+                <img src="img/primerbeso.jpg" alt="Nuestro Primer Beso">
+            </div>
+            <div class="poema-box">
+                <p>Hay momentos que iluminan más que cualquier estrella.</p>
+                <p>Tu compañía es como una luz suave en medio de la noche:(aquella noche Lunes 28 de Setiembre)</p>
+                <p>llena de paz, bonita y sincera.</p>
+                <p>Gracias por regalarme recuerdos tan maravillosos.</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>Hecho con mucho cariño para ti ✨ ❤️</p>
+        </footer>
+    </div>
+
+</body>
+</html>
